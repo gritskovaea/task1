@@ -9,7 +9,7 @@ public class TheaterTicket extends TicketService {
     @Override
     public double calculateDiscount() {
         if (user.getAge() < 12) {
-            return basePrice * 0.2; // 20% скидка для детей
+            return basePrice * 0.2;
         }
         return 0;
     }

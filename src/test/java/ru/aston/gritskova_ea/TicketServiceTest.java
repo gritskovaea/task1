@@ -7,31 +7,31 @@ public class TicketServiceTest {
 
     @Test
     public void testUserCreation() {
-        User user = new User(30, "John", "Doe");
+        User user = new User(30, "User", "1");
         assertEquals(30, user.getAge());
-        assertEquals("John", user.getName());
-        assertEquals("Doe", user.getSurname());
+        assertEquals("User", user.getName());
+        assertEquals("1", user.getSurname());
     }
 
     @Test
     public void testTheaterTicketDiscountForChild() {
-        User childUser = new User(10, "Tom", "Hanks");
+        User childUser = new User(10, "User", "2");
         TheaterTicket ticket = new TheaterTicket(100, childUser);
-        assertEquals(20.0, ticket.calculateDiscount(), 0.01); // 20% скидка
+        assertEquals(20.0, ticket.calculateDiscount(), 0.01);
     }
 
     @Test
     public void testMovieTicketDiscountForStudent() {
-        User studentUser = new User(20, "Alice", "Smith");
+        User studentUser = new User(20, "User", "3");
         MovieTicket ticket = new MovieTicket(100, studentUser);
-        assertEquals(0.0, ticket.calculateDiscount(), 0.01); // 10% скидка
+        assertEquals(0.0, ticket.calculateDiscount(), 0.01);
     }
 
     @Test
     public void testMovieTicketDiscountForSenior() {
-        User seniorUser = new User(70, "John", "Doe");
+        User seniorUser = new User(70, "User", "4");
         MovieTicket ticket = new MovieTicket(100, seniorUser);
-        assertEquals(15.0, ticket.calculateDiscount(), 0.01); // 15% скидка
+        assertEquals(15.0, ticket.calculateDiscount(), 0.01);
     }
 }
 
